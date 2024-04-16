@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cafeteria Home</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <style>/* Reset CSS */
+        /* Reset default margin and padding */
+/* Reset default margin and padding */
+/* Reset default margin and padding */
+body, h1, h2, p, ul, li {
+    margin: 0;
+    padding: 0;
+}
+li{
+    color:#f2f2f2;
+}
+h2,h3,p{
+    color:#f2f2f2;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+    color:#f5eaea
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+main {
+    padding: 20px;
+}
+
+section {
+    margin-bottom: 40px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    position: relative; /* Needed for positioning the background image */
+    background-image: url('images/background.png'); /* Add your background image URL here */
+}
+
+.section-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+    background-size: cover;
+    background-position: center;
+    
+    /* Ensure the background stays behind the content */
+}
+
+section h2 {
+    color: #fff;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.menu-item {
+    margin-bottom: 20px;
+}
+
+.menu-item h3 {
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.menu-item p {
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.menu-item ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.menu-item ul li {
+    margin-bottom: 10px;
+}
+
+.footer {
+    background-color: #fff;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.container1 {
+    max-width: 800px;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profile-picture1 {
+    margin-bottom: 20px;
+}
+.profile-picture1 img:hover {
+    transform: scale(1.1); /* Enlarge the image by 20% on hover */
+}
+
+.profile-picture1 img {
+    width: 400px;
+    height: 300px;
+    
+}
+/* CSS */
+.menu-item {
+    cursor: pointer; /* Change cursor to pointer when hovering over menu item */
+    /* Add other styles as needed */
+}
+
+.additional-details {
+   display:none; /* Hide additional details by default */
+    position: absolute;
+    background-color: #8f3b3b;
+    border: 1px solid #0c0c0c;
+    padding: 1px;
+    padding-bottom: 5px; /* Adjust the padding from the bottom */
+     /* Adjust the distance from the bottom */
+    right: 10%; /* Position to the right of the menu item text */
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+}
+
+.menu-item:hover .additional-details,
+.menu-item.active .additional-details {
+    display: block; /* Show additional details when hovering over or clicking on menu item */
+    /* Add transition or animation properties for smooth appearance */
+}
+
+
+
+        </style>
+    <header>
+        <center><h1>Welcome to Café Gusto</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav></center>
+    </header>
+    
+   <div id="menu-container">
+ 
+        <main>
+            
+            <section id="specials">
+                <h2>Today's Special</h2>
+                <center><p>Happy Hours: Lunch - Monday-Friday 11am-1:30pm $2 off lunch menu items.</p></center>
+                <div class="container1">
+                    <div class="profile-picture1">
+                        <img src="images/happyhrs.jpg" alt="Owner's Profile Picture">
+                    </div>
+            </section>
+    
+
+   
+           
+            <section id="breakfast">
+                <h2>Breakfast Menu</h2>
+                <div class="container1">
+                    <div class="profile-picture1">
+                        <img src="images/breakfast.jpg" alt="Owner's Profile Picture">
+                    </div>
+                    <ul>
+                        <li class="menu-item" onclick="toggleDetails(this)">
+                            <div class="menu-item-info">
+                                <h3>Turkish Menemen - $8</h3>
+                                <!--<p>Click to view ingredients and nutritional information</p>-->
+                                <div class="additional-details">
+                                    <p>Ingredients: Tomatoes, peppers, onions, eggs, spices</p>
+                                    <p>Nutritional Information: Calories: 250, Fat: 15g, Protein: 10g</p>
+                                    <p>Vegan-Type : Non-Vegan</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="menu-item" onclick="toggleDetails(this)">
+                            <div class="menu-item-info">
+                                <h3>Caprese Sandwich - $10</h3>
+                                <!--<p>Click to view ingredients and nutritional information</p>-->
+                                <div class="additional-details">
+                                    <p>Ingredients: Fresh Mozzarella, Ripe Tomatoes, Basil Leaves, Extra Virgin Olive Oil, Balsamic Glaze, Ciabatta Bread
+            </p>
+                                    <p>Nutritional Information: Calories: 376, Fat: 16g, Protein: 17g</p>
+                                    <p>Vegan-Type : Vegan</p>
+                                </div>
+                            </div>
+                        </li>
+            
+            
+                        <li class="menu-item" onclick="toggleDetails(this)">
+                            <div class="menu-item-info">
+                                <h3>Pancakes with Fig Compote - $8</h3>
+                                <!--<p>Click to view ingredients and nutritional information</p>-->
+                                <div class="additional-details">
+                                    <p>Ingredients: Fluffy Pancakes, Homemade Fig Compote Whipped Cream, Powdered Sugar, Fresh Figs 
+            </p>
+                                    <p>Nutritional Information: Calories: 600, Fat: 20g, Protein: 10g</p>
+                                    <p>Vegan-Type : Vegan</p>
+                                </div>
+                            </div>
+                        </li>
+            
+            
+                               
+                               
+                               
+                            </ul>
+                        </section>
+               
+                        <section id="lunch">
+                            <h2>Lunch Menu</h2>
+                            <div class="container1">
+                                <div class="profile-picture1">
+                                    <img src="images/lunch1.jpg" alt="Owner's Profile Picture">
+                                </div>
+                            <ul>
+                                <li class="menu-item" onclick="toggleDetails(this)">
+                                    <div class="menu-item-info">
+                                        <h3>Margarita Pide - $12</h3>
+                                        <!--<p>Click to view ingredients and nutritional information</p>-->
+                                        <div class="additional-details">
+                                            <p>Ingredients: Hand-stretched Dough, Fresh Mozzarella, Cherry Tomatoes, Basil Leaves, Olive Oil Drizzle
+            </p>
+                                            <p>Nutritional Information: Calories: 250, Fat: 10g, Protein: 15g</p>
+                                            <p>Vegan-Type : Non-Vegan</p>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="menu-item" onclick="toggleDetails(this)">
+                                    <div class="menu-item-info">
+                                        <h3>Lentil Soup - $7</h3>
+                                        <!--<p>Click to view ingredients and nutritional information</p>-->
+                                        <div class="additional-details">
+                                            <p>Ingredients:(May include dairy if butter is used; can be made vegan with olive oil), Red Lentils, Carrots, Onions, Celery, Cumin, Lemon Wedge</p>
+                                            <p>Nutritional Information: Calories: 280, Fat: 6g, Protein: 18g</p>
+                                            <p>Vegan-Type : Vegan</p>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="menu-item" onclick="toggleDetails(this)">
+                                    <div class="menu-item-info">
+                                        <h3>Turkish Meatball Sandwich - $10</h3>
+                                        <!--<p>Click to view ingredients and nutritional information</p>-->
+                                        <div class="additional-details">
+                                            <p>Ingredients: Grilled Meatballs, Lettuce, Tomato, Pickled Red Onions, Garlic Yogurt Sauce, Served in a Baguette
+            </p>
+                                            <p>Nutritional Information: Calories: 750, Fat: 35g, Protein: 50g</p>
+                                            <p>Vegan-Type : Non-Vegan</p>
+                                        </div>
+                                    </div>
+                                </li>
+                               
+            
+            
+                               
+                            </ul>
+                        </section>
+               
+                        <section id="dinner">
+                            <h2>Dinner Menu</h2>
+                            <div class="container1">
+                                <div class="profile-picture1">
+                                    <img src="images/dinner.png" alt="Owner's Profile Picture">
+                                </div>
+                            <ul>
+                                <li class="menu-item" onclick="toggleDetails(this)">
+                                    <div class="menu-item-info">
+                                        <h3>Mixed Grill Platter - $20</h3>
+                                        <!--<p>Click to view ingredients and nutritional information</p>-->
+                                        <div class="additional-details">
+                                            <p>Ingredients: Chicken, Lamb, Beef, Grilled Vegetables, Tzatziki Sauce, Flatbread</p>
+                                            <p>Nutritional Information: Calories: 1250, Fat: 60g, Protein: 100g</p>
+                                            <p>Vegan-Type : Non-Vegan</p>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="menu-item" onclick="toggleDetails(this)">
+                                    <div class="menu-item-info">
+                                        <h3>Eggplant Parmigiana - $16</h3>
+                                        <!--<p>Click to view ingredients and nutritional information</p>-->
+                                        <div class="additional-details">
+                                            <p>Ingredients: Layered Eggplant, Marinara Sauce, Mozzarella Cheese, Parmesan Cheese, Fresh Basil
+            </p>
+                                            <p>Nutritional Information: Calories: 650, Fat: 30g, Protein: 30g</p>
+                                            <p>Vegan-Type : Non-Vegan</p>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="menu-item" onclick="toggleDetails(this)">
+                                    <div class="menu-item-info">
+                                        <h3>Iskender Kebab - $19</h3>
+                                        <!--<p>Click to view ingredients and nutritional information</p>-->
+                                        <div class="additional-details">
+                                            <p>Ingredients: Thinly Sliced Grilled Lamb, Pita Bread, Tomato Sauce, Melted Butter, Yogurt on the Side</p>
+                                            <p>Nutritional Information: Calories: 900, Fat: 55g, Protein: 60g</p>
+                                            <p>Vegan-Type : Non-Vegan</p>
+                                        </div>
+                                    </div>
+                                </li>
+                             
+                            </ul>
+                        </section>
+               
+                        <section id="special-selections">
+                            <h2>Special Selections</h2>
+                            <div class="container1">
+                                <div class="profile-picture1">
+                                    <img src="images/special.jpg" alt="Owner's Profile Picture">
+                                </div>
+                            <h3>Breakfast</h3>
+                            <ul>
+                                <li class="menu-item" onclick="toggleDetails(this)">
+                                    <div class="menu-item-info">
+                                        <h3>Börek with Spinach and Feta - $6</h3>
+                                        <!--<p>Click to view ingredients and nutritional information</p>-->
+                                        <div class="additional-details">
+                                            <p>Ingredients: Crispy Phyllo Pastry, Spinach, Feta Cheese, Olive Oil, Nigella Seeds</p>
+                                            <p>Nutritional Information: Calories: 350, Fat: 25g, Protein: 15g</p>
+                                            <p>Vegan-Type : Non-Vegan</p>
+                                        </div>
+                                    </div>
+                                </li>
+                               
+                            </ul>
+                            <h3>Lunch</h3>
+                            <ul>
+                                <li class="menu-item" onclick="toggleDetails(this)">
+                                    <div class="menu-item-info">
+                                        <h3>Grilled Halloumi Salad - $11</h3>
+                                        <!--<p>Click to view ingredients and nutritional information</p>-->
+                                        <div class="additional-details">
+                                            <p>Ingredients: Grilled Halloumi Cheese, Mixed Greens, Cherry Tomatoes, Cucumber, Olives, Lemon-Herb Dressing</p>
+                                            <p>Nutritional Information: Calories: 400, Fat: 35g, Protein: 22g</p>
+                                            <p>Vegan-Type : Non-Vegan</p>
+                                        </div>
+                                    </div>
+                                </li>
+                               
+                            </ul>
+                            <h3>Dinner</h3>
+                            <ul>
+                                <li class="menu-item" onclick="toggleDetails(this)">
+                                    <div class="menu-item-info">
+                                        <h3>Seafood Linguine - $18</h3>
+                                        <!--<p>Click to view ingredients and nutritional information</p>-->
+                                        <div class="additional-details">
+                                            <p>Ingredients: Linguine Pasta, Shrimp, Clams, Mussels, Garlic White Wine Sauce, Parsley, Lemon Zest</p>
+                                            <p>Nutritional Information: Calories: 750, Fat: 35g, Protein: 43g</p>
+                                            <p>Vegan-Type : Non-Vegan</p>
+                                        </div>
+                                    </div>
+                                </li>
+                               
+                               
+                            </ul>
+                        </section>
+               
+                        <section id="beverages">
+                            <h2>Beverages</h2>
+            
+            
+                            <div class="container1">
+                                <div class="profile-picture1">
+                                    <img src="images/breverages.jpg" alt="Owner's Profile Picture">
+                                </div>
+                            <h3>Coffee</h3>
+                            <ul>
+                                <li class="menu-item" onclick="toggleDetails(this)">
+                                    <div class="menu-item-info">
+                                        <h3>House Turkish Coffee - $4</h3>
+                                        <!--<p>Click to view ingredients and nutritional information</p>-->
+                                        <div class="additional-details">
+                                            <p>Ingredients: Fine ground coffee beans from Turkey</p>
+                                            <p>Nutritional Information: Calories: 5, Fat: 0g, Protein: 0g</p>
+                                            <p>Vegan-Type : Vegan</p>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="menu-item" onclick="toggleDetails(this)">
+                                    <div class="menu-item-info">
+                                        <h3>Cappuccino - $4</h3>
+                                        <!--<p>Click to view ingredients and nutritional information</p>-->
+                                        <div class="additional-details">
+                                            <p>Ingredients: Espresso, Steamed milk, Milk foam (frothed milk)</p>
+                                            <p>Nutritional Information: Calories: 120, Fat: 7g, Protein: 8g</p>
+                                            <p>Vegan-Type : Non-Vegan</p>
+                                        </div>
+                                    </div>
+                                </li>
+                               
+                                <li class="menu-item" onclick="toggleDetails(this)">
+                                    <div class="menu-item-info">
+                                        <h3>Latte - $5 (specials: pistachios, sesame halwa dark chocolate, saffron lattes)</h3>
+                                        <!--<p>Click to view ingredients and nutritional information</p>-->
+                                        <div class="additional-details">
+                                            <p>Ingredients: Steamed milk, (Optional) Foam on top, (Optional) Flavorings or sweeteners, such as vanilla syrup or sugar</p>
+                                            <p>Nutritional Information: Calories: 220, Fat: 11g, Protein: 12g</p>
+                                            <p>Vegan-Type : Non-Vegan</p>
+                                        </div>
+                                    </div>
+                                </li>
+                               
+                               
+                               
+                               
+                            </ul>
+                            <h3>Soda</h3>
+                            <ul>
+                                <li>Sparkling Water - $1</li>
+                                <li>Carbonated Drinks - $2</li>
+                                <li>Lemonade - $2</li>
+                            </ul>
+                        </section>
+                    </main>
+               
+                    <footer>
+                        <p>&copy; Café Gusto. All rights reserved.</p>
+                    </footer>
+              <script src="menu_script.js"></script>
+                </body>
+               
+                </html>
+               
+            </body>
+            </html>
+            
+            
+            
+            
+                    
+                    
+                   
+                </ul>
+                <h3>Soda</h3>
+                <ul>
+                    <li>Sparkling Water - $1</li>
+                    <li>Carbonated Drinks - $2</li>
+                    <li>Lemonade - $2</li>
+                </ul>
+            </section>
+        </main>
+
+        <main>
+            
+            <section id="specials">
+                <h2>Today's Special</h2>
+                <center><p>Happy Hours: Lunch - Monday-Friday 11am-1:30pm $2 off lunch menu items.</p></center>
+                <div class="container1">
+                    <div class="profile-picture1">
+                        <img src="images/happyhrs.jpg" alt="Owner's Profile Picture">
+                    </div>
+            </section>
+    </main>
+</div>
+
+   
+                   <footer>
+            <p>&copy; Café Gusto. All rights reserved.</p>
+        </footer>
+  <script src="menu_script.js"></script>
+    </body>
+    
+    </html>
+    
+</body>
+</html>

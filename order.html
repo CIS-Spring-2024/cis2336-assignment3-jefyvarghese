@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cafeteria Home</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+#menu-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+main {
+    padding: 20px;
+}
+
+section#order-form {
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.menu-section {
+    margin-bottom: 20px;
+}
+
+.menu-item {
+    margin-bottom: 10px;
+}
+
+.menu-item label {
+    display: block;
+}
+
+button[type="submit"] {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: #555;
+}
+</style>
+<body>
+    <header>
+        <center><h1>Welcome to Café Gusto</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="order.html">Order</a></li>
+            </ul>
+        </nav></center>
+    </header>
+    
+    <div id="menu-container">
+        <section id="order-form">
+            <h2>Order Form</h2>
+            <form id="order-form" onsubmit="submitOrder(event)">
+                <!-- Breakfast Menu -->
+                <h3>Breakfast Menu</h3>
+                <div class="menu-section" id="breakfast-menu">
+                    <!-- Items from breakfast menu go here -->
+                    <!-- Each menu item should have its own input field -->
+                    <div class="menu-item">
+                        <label>
+                            <input type="number" name="turkish_menemen" min="0" max="10" value="0">
+                            Turkish Menemen - $8
+                        </label>
+                        
+                     
+                    </div>
+                   
+                   
+                    <!-- Repeat for other items -->
+                </div>
+                
+                <!-- Lunch Menu -->
+                <h3>Lunch Menu</h3>
+                <div class="menu-section" id="lunch-menu">
+                    <!-- Items from lunch menu go here -->
+                    <!-- Each menu item should have its own input field -->
+                    <div class="menu-item">
+                        <label>
+                            <input type="number" name="margarita_pide" min="0" max="10" value="0">
+                            Margarita Pide - $12
+                        </label>
+                    </div>
+                    <!-- Repeat for other items -->
+                </div>
+                
+                <!-- Dinner Menu -->
+                <h3>Dinner Menu</h3>
+                <div class="menu-section" id="dinner-menu">
+                    <!-- Items from dinner menu go here -->
+                    <!-- Each menu item should have its own input field -->
+                    <div class="menu-item">
+                        <label>
+                            <input type="number" name="mixed_grill_platter" min="0" max="10" value="0">
+                            Mixed Grill Platter - $20
+                        </label>
+                    </div>
+                    <!-- Repeat for other items -->
+                </div>
+                
+                <!-- Special Selections -->
+                <h3>Special Selections</h3>
+                <div class="menu-section" id="special-selections">
+                    <!-- Items from special selections go here -->
+                    <!-- Each menu item should have its own input field -->
+                    <div class="menu-item">
+                        <label>
+                            <input type="number" name="borek_spinach_feta" min="0" max="10" value="0">
+                            Börek with Spinach and Feta - $6
+                        </label>
+                    </div>
+                    <!-- Repeat for other items -->
+                </div>
+                
+                <!-- Beverages -->
+                <h3>Beverages</h3>
+                <div class="menu-section" id="beverages-menu">
+                    <!-- Items from beverages menu go here -->
+                    <!-- Each menu item should have its own input field -->
+                    <div class="menu-item">
+                        <label>
+                            <input type="number" name="house_turkish_coffee" min="0" max="10" value="0">
+                            House Turkish Coffee - $4
+                        </label>
+                    </div>
+                    <!-- Repeat for other items -->
+                </div>
+                
+                <button type="submit">Submit Order</button>
+            </form>
+        </section>
+        
+        <footer>
+            <p>&copy; Café Gusto. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script src="order_script.js"></script>
+</body>
+</html>
